@@ -4,14 +4,22 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { MaterialModule } from './material.module';
+import { MapaComponent } from './components/mapa/mapa.component';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MapaComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MaterialModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'your apaikey from google maps'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
